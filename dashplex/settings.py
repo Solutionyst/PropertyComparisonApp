@@ -34,12 +34,15 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-omy^p)w7k8yp+ch$*(ow4a1g!(7*39x36dbkiek=)%totbsu3o'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.getenv('SECRET_KEY', 'True') == 'True')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '*.herokuapp.com'
+]
 
 
 # Application definition
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'app',
+    'whitenoise.runserver_nostatic',
 
 ]
 
@@ -61,9 +65,8 @@ MIDDLEWARE = [
     # other middleware classes
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
-    
-    
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.Whitenoise.Middleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -142,7 +145,8 @@ HTML_MINIFY = False
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [STATIC_DIR]
 print(STATIC_DIR)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = BASE_DIR/'static'
+STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
