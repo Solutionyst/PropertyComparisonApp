@@ -21,7 +21,6 @@ def scraper():
         links = resp.xpath('//a[@class="places-property-result"]/@href').getall()
         for link in links:
             link = link.split('/')[-1]
-            print(link)
             req = r.get(f'https://www.places.je/property/{link}')
             resp = Selector(text=req.text)
             price = resp.xpath('//span[@class="property-info-price"]/text()').get()
