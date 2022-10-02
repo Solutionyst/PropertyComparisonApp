@@ -11,9 +11,9 @@ cssselect==1.1.0
 Django==4.0.2
 django-htmlmin==0.11.0
 filelock==3.8.0
+gunicorn==20.1.0
 html5lib==1.1
 hyperlink==21.0.0
-idna==3.3
 incremental==21.3.0
 itemadapter==0.7.0
 itemloaders==1.0.6
@@ -47,3 +47,4 @@ urllib3==1.26.12
 w3lib==2.0.1
 webencodings==0.5.1
 zope.interface==5.4.0
+whitenoise==3.3.1
