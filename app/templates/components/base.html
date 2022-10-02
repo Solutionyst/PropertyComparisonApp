@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="DashOps - Cevian Operations Dashboard">
+		<meta name="author" content="Alistair Mundy Dunne">
+
+		<!-- Title -->
+		<title> DashOps - Cevian Operations Dashboard</title>
+
+		<!-- Styles -->
+		{% block styles %}{% endblock %}
+		{% include 'components/layouts/styles.html'%}
+
+	</head>
+
+	<body class="main-body leftmenu ltr light-theme dark-menu">
+
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="{% static 'assets/img/loader.svg'%}" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+
+		<!-- Page -->
+		<div class="page">
+
+			<!--App-header-->
+			{% include 'components/layouts/app-header.html'%}
+
+			<!--App-sidebar-->
+			{% include 'components/layouts/app-sidebar.html'%}
+
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="main-container container-fluid">
+					<div class="inner-body">
+
+						{% block content %} {% endblock %}
+
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+
+			<!--Sidebar-right-->
+			{% include 'components/layouts/sidebar-right.html'%}
+
+			<!--Footer-->
+			{% include 'components/layouts/footer.html'%}
+
+			<!--Modal-->
+			{% include 'components/layouts/modal.html'%}
+			{% block modal %}{% endblock %}
+
+		</div>
+
+		<!--Scripts-->
+		{% include 'components/layouts/scripts.html'%}
+		{% block scripts %}{% endblock %}
+		
+	</body>
+
+</html>

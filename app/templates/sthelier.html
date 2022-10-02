@@ -1,0 +1,259 @@
+{% extends 'components/base.html'%}
+{% load static %}
+{% load humanize %}
+
+    {% block styles %}
+
+    {% endblock %}
+
+        {% block content %}
+
+					<!-- Page Header -->
+					<div class="page-header">
+						<div>
+							<h2 class="main-content-title tx-24 mg-b-5">St. Helier Property Data</h2>
+						</div>
+					</div>
+					<!-- End Page Header -->
+
+
+                            <div class="row row-sm">
+
+
+								<div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+                                    <!--MTD Averages-->
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1"><I>St Helier MTD</I></label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierMTD }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierMTDCount }}</h6>
+                                                        <h6 class="font-weight-normal">Prior Month: {{ stHelierPriorMonth }}</h6>
+                                                        <h6 class="font-weight-normal">Movement (%): {{ stHelierMTDMovement }}</h6>
+                                                        <h6 class="font-weight-normal">Movement (£): {{ stHelierMovementMTDGBP|intcomma }}</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <!--QTD Averages-->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">St Helier QTD</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierQTD }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierQTDCount }}</h6>
+                                                        <h6 class="font-weight-normal">Prior Month: NA</h6>
+                                                        <h6 class="font-weight-normal">Movement (%): NA</h6>
+                                                        <h6 class="font-weight-normal">Movement (£): NA</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+                                <!--YTD Averages-->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">St Helier YTD</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierYTD }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierYTDCount }}</h6>
+                                                        <h6 class="font-weight-normal">Prior Year: NA</h6>
+                                                        <h6 class="font-weight-normal">Movement (%): NA</h6>
+                                                        <h6 class="font-weight-normal">Movement (£): NA</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+                    <!--Row-->
+							<div class="row row-sm">
+
+								<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+
+                                    <!--One Bed-->
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">One Bedroom</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierOneBedAvg }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierOneBedCount }}</h6>
+														<small><b class="badge rounded-pill bg-success fs-11">{{ stHelierOneBedMTDMvmt }}%</b><span class="px-1">MTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">QTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">YTD</span></small>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <!--Two Bed-->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">Two Bedroom</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierTwoBedAvg }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierTwoBedCount }}</h6>
+														<small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">MTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">QTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">YTD</span></small>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">Three Bedroom</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierThreeBedAvg }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierThreeBedCount }}</h6>
+														<small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">MTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">QTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">YTD</span></small>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+									<div class="card custom-card">
+										<div class="card-body">
+											<div class="card-item">
+												<div class="card-item-icon card-icon">
+													<svg class="text-primary wd-20 ht-20" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22.5,10h-4.0005493C18.2234497,10.0001831,17.9998169,10.223999,18,10.5v12.0005493C18.0001831,22.7765503,18.223999,23.0001831,18.5,23h4.0006104C22.7765503,22.9998169,23.0001831,22.776001,23,22.5V10.4993896C22.9998169,10.2234497,22.776001,9.9998169,22.5,10z M22,22h-3V11h3V22z M14.5,2h-4.0005493C10.2234497,2.0001831,9.9998169,2.223999,10,2.5v20.0005493C10.0001831,22.7765503,10.223999,23.0001831,10.5,23h4.0006104C14.7765503,22.9998169,15.0001831,22.776001,15,22.5V2.4993896C14.9998169,2.2234497,14.776001,1.9998169,14.5,2z M14,22h-3V3h3V22z M6.5,14H2.4993896C2.2234497,14.0001831,1.9998169,14.223999,2,14.5v8.0005493C2.0001831,22.7765503,2.223999,23.0001831,2.5,23h4.0006104C6.7765503,22.9998169,7.0001831,22.776001,7,22.5v-8.0006104C6.9998169,14.2234497,6.776001,13.9998169,6.5,14z M6,22H3v-7h3V22z"/></svg>
+												</div>
+												<div class="card-item-title mb-2">
+													<label class="main-content-label tx-13 mb-1">Four Bedroom</label>
+												</div>
+												<div class="card-item-body">
+													<div class="card-item-stat">
+														<h4 class="font-weight-normal">£{{ stHelierFourBedAvg }}</h4>
+                                                        <h6 class="font-weight-normal">Properties Listed: {{ stHelierFourBedCount }}</h6>
+														<small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">MTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">QTD</span></small>
+                                                        <small><b class="badge rounded-pill bg-success fs-11">NA%</b><span class="px-1">YTD</span></small>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <!--End row-->
+                    <div class="row row-sm">
+						<div class="col-lg-12">
+							<div class="card custom-card">
+								<div class="card-body">
+									<div>
+										<h6 class="main-content-label mb-1">St Helier Monthly Averages</h6>
+										<p class="text-muted card-sub-title">Logging month to month averages of property listed in the Parish of St Helier. Note: These are property listings, and not the final sale price.</p>
+									</div>
+									<div class="table-responsive">
+											<table class="table table-bordered text-nowrap border-bottom" id="responsive-datatable">
+											<thead>
+												<tr>
+                                                    <th>Date</th>
+                                                    <th>Parish</th>
+													<th>Average</th>
+												</tr>
+											</thead>
+											<tbody>
+                                                <tr>
+                                                    {% for i in stHelierMonthlyData %}
+                                                        <td>{{ i.date }}</td>
+                                                        <td>{{ i.Parish }}</td>
+                                                        <td>£{{ i.Average|intcomma }}</td>
+
+                                                </tr>
+                                            {% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                            </div>
+                            </div>
+
+
+        {% endblock %}
+
+    {% block scripts %}
+
+	<!-- Internal Chartjs charts js-->
+	<script src=" {% static 'assets/plugins/datatable/js/jquery.dataTables.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/dataTables.bootstrap5.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/dataTables.buttons.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/buttons.bootstrap5.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/jszip.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/pdfmake/pdfmake.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/pdfmake/vfs_fonts.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/buttons.html5.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/buttons.print.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/js/buttons.colVis.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/dataTables.responsive.min.js' %} "></script>
+	<script src=" {% static 'assets/plugins/datatable/responsive.bootstrap5.min.js' %} "></script>
+	<script src=" {% static 'assets/js/table-data.js' %} "></script>
+	<script src=" {% static 'assets/plugins/chartjs/Chart.bundle.min.js' %} "></script>
+	<script src=" {% static 'assets/js/chart.chartjs.js' %} "></script>
+
+    {% endblock %}
