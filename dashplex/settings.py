@@ -145,7 +145,6 @@ HTML_MINIFY = False
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [STATIC_DIR]
 print(STATIC_DIR)
-STATIC_ROOT = BASE_DIR/'static'
 STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
