@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Avg
 from django.db.models import Sum
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import pandas as pd
 from app.models import DailyData
 

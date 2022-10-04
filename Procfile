@@ -1,0 +1,1 @@
+web: gunicorn dashplex.wsgi --log-file -
